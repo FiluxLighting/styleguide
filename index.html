@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estilo - E-commerce Premium Lighting</title>
+    <link rel="stylesheet" href="assets/css/filux-premium-unified.css">
+    <style>
+        /* Estilos específicos para la guía */
+        .guide-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-8);
+            background: var(--color-white);
+        }
+        
+        .guide-section {
+            margin-bottom: var(--space-32);
+        }
+        
+        .guide-demo {
+            background: var(--color-gray-50);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-8);
+            margin: var(--space-6) 0;
+            border: 1px solid var(--color-border-light);
+        }
+        
+        .guide-demo .btn {
+            margin: var(--space-2);
+        }
+        
+        @media (max-width: 640px) {
+            .guide-demo .flex {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .guide-demo .btn {
+                margin: var(--space-2) 0;
+                width: 100%;
+            }
+        }
+        
+        .guide-code {
+            background: var(--color-gray-900);
+            color: var(--color-gray-200);
+            padding: var(--space-4);
+            border-radius: var(--border-radius-base);
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: var(--text-sm);
+            overflow-x: auto;
+            margin-top: var(--space-4);
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+        }
+        
+        .color-swatch {
+            text-align: center;
+        }
+        
+        .color-box {
+            height: 80px;
+            border-radius: var(--border-radius-base);
+            margin-bottom: var(--space-2);
+            border: 1px solid var(--color-border-light);
+        }
+        
+        .typography-sample {
+            margin: var(--space-4) 0;
+        }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-6) 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <!-- Header de la guía -->
+        <header class="guide-section">
+            <h1 class="text-5xl font-light mb-4">Premium Lighting Design System</h1>
+            <p class="text-lead text-secondary mb-8">
+                Guía completa de estilo para e-commerce de iluminación premium. 
+                Diseño minimalista, elegante y sofisticado inspirado en galerías de arte.
+            </p>
+            <div class="flex gap-4">
+                <div class="btn btn-primary">Ver componentes</div>
+                <div class="btn btn-secondary">Descargar recursos</div>
+            </div>
+        </header>
+
+        <!-- Filosofía de Diseño -->
+        <section class="guide-section">
+            <h2 class="section-title">Filosofía de Diseño</h2>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h3 class="text-xl font-medium mb-4">Minimalismo</h3>
+                    <p class="text-secondary">
+                        Espacios en blanco generosos, elementos esenciales, 
+                        sin distracciones para destacar los productos.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-medium mb-4">Elegancia</h3>
+                    <p class="text-secondary">
+                        Tipografía refinada, colores sofisticados, 
+                        interacciones sutiles que transmiten calidad.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-medium mb-4">Funcionalidad</h3>
+                    <p class="text-secondary">
+                        Diseño centrado en el usuario, navegación intuitiva, 
+                        conversión optimizada sin sacrificar la estética.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paleta de Colores -->
+        <section class="guide-section">
+            <h2 class="section-title">Paleta de Colores</h2>
+            <p class="text-secondary mb-8">
+                Sistema cromático basado en neutrales con un acento dorado sutil para elementos de importancia.
+            </p>
+            
+            <div class="color-palette">
+                <!-- Blanco y Negro -->
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #ffffff; border: 2px solid #e5e5e5;"></div>
+                    <h4 class="font-medium">Blanco</h4>
+                    <code class="text-sm text-muted">#ffffff</code>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #000000;"></div>
+                    <h4 class="font-medium">Negro</h4>
+                    <code class="text-sm text-muted">#000000</code>
+                </div>
+                
+                <!-- Grises -->
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #fafafa;"></div>
+                    <h4 class="font-medium">Gray 50</h4>
+                    <code class="text-sm text-muted">#fafafa</code>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #f5f5f5;"></div>
+                    <h4 class="font-medium">Gray 100</h4>
+                    <code class="text-sm text-muted">#f5f5f5</code>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #737373;"></div>
+                    <h4 class="font-medium">Gray 500</h4>
+                    <code class="text-sm text-muted">#737373</code>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #171717;"></div>
+                    <h4 class="font-medium">Gray 900</h4>
+                    <code class="text-sm text-muted">#171717</code>
+                </div>
+                
+                <!-- Colores Corporativos -->
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #7CB518;"></div>
+                    <h4 class="font-medium">Verde Corporativo</h4>
+                    <code class="text-sm text-muted">#7CB518</code>
+                    <small class="text-xs text-muted">C:55 M:0 Y:100 K:0</small>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #1B5FA6;"></div>
+                    <h4 class="font-medium">Azul Corporativo</h4>
+                    <code class="text-sm text-muted">#1B5FA6</code>
+                    <small class="text-xs text-muted">C:90 M:50 Y:0 K:0</small>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: linear-gradient(135deg, #7CB518, #1B5FA6);"></div>
+                    <h4 class="font-medium">Gradiente Corporativo</h4>
+                    <code class="text-sm text-muted">Verde → Azul</code>
+                    <small class="text-xs text-muted">135deg</small>
+                </div>
+            </div>
+
+            <div class="guide-code">
+/* Uso de colores corporativos en CSS */
+.primary-bg { background-color: var(--color-white); }
+.secondary-bg { background-color: var(--color-gray-50); }
+.accent-green { color: var(--color-accent-primary); }
+.accent-blue { color: var(--color-accent-secondary); }
+.accent-gradient { background: var(--color-accent-gradient); }
+.text-primary { color: var(--color-gray-900); }
+.text-secondary { color: var(--color-gray-600); }
+            </div>
+        </section>
+
+        <!-- Tipografía -->
+        <section class="guide-section">
+            <h2 class="section-title">Sistema Tipográfico</h2>
+            <p class="text-secondary mb-8">
+                Una sola familia tipográfica: <strong>Inter</strong>. Moderna, legible y optimizada para web.
+                Reduce el tiempo de carga y mantiene consistencia visual.
+            </p>
+
+            <div class="typography-sample">
+                <h1 class="font-light">H1 - Título Principal (Light)</h1>
+                <h2 class="font-semibold">H2 - Título de Sección (Semibold)</h2>
+                <h3 class="font-medium">H3 - Subtítulo (Medium)</h3>
+                <h4 class="font-medium">H4 - Apartado (Medium)</h4>
+                <p class="text-lead">Texto lead - Para introducciones importantes</p>
+                <p>Párrafo regular - Para contenido principal con buena legibilidad</p>
+                <p class="text-small">Texto pequeño - Para detalles y especificaciones</p>
+            </div>
+
+            <div class="guide-code">
+/* Jerarquía tipográfica */
+h1 { font-size: var(--text-5xl); font-weight: var(--font-light); }
+h2 { font-size: var(--text-3xl); font-weight: var(--font-semibold); }
+.text-lead { font-size: var(--text-lg); font-weight: var(--font-light); }
+p { font-size: var(--text-base); color: var(--color-text-secondary); }
+            </div>
+        </section>
+
+        <!-- Botones -->
+        <section class="guide-section">
+            <h2 class="section-title">Sistema de Botones</h2>
+            <p class="text-secondary mb-8">
+                Botones discretos y elegantes con estados de hover sutiles. 
+                Los colores corporativos se reservan para acciones críticas y elementos de branding.
+            </p>
+
+            <div class="guide-demo">
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn btn-primary">Botón Primario</button>
+                    <button class="btn btn-secondary">Botón Secundario</button>
+                    <button class="btn btn-accent">Verde Corporativo</button>
+                    <button class="btn btn-corporate">Azul Corporativo</button>
+                    <button class="btn btn-gradient">Gradiente Corp.</button>
+                </div>
+                
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn btn-ghost">Botón Fantasma</button>
+                    <button class="btn btn-primary btn-sm">Pequeño</button>
+                    <button class="btn btn-primary btn-lg">Grande</button>
+                    <button class="btn btn-gradient btn-xl">Premium XL</button>
+                </div>
+                
+                <button class="btn btn-gradient btn-full mb-4">Botón Corporativo Ancho Completo</button>
+            </div>
+
+            <div class="guide-code">
+&lt;button class="btn btn-primary"&gt;Primario&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secundario&lt;/button&gt;
+&lt;button class="btn btn-accent"&gt;Verde Corporativo&lt;/button&gt;
+&lt;button class="btn btn-corporate"&gt;Azul Corporativo&lt;/button&gt;
+&lt;button class="btn btn-gradient"&gt;Gradiente Corporativo&lt;/button&gt;
+&lt;button class="btn btn-ghost"&gt;Discreto&lt;/button&gt;
+
+&lt;!-- Botón de ancho completo --&gt;
+&lt;button class="btn btn-gradient btn-full"&gt;Ancho Completo&lt;/button&gt;
+            </div>
+        </section>
+
+        <!-- Top Bar -->
+        <section class="guide-section">
+            <h2 class="section-title">Top Bar Informativo</h2>
+            <p class="text-secondary mb-8">
+                Barra superior discreta con información esencial en una sola línea. 
+                Iconos elegantes en color corporativo y distribución equilibrada izquierda-derecha.
+            </p>
+
+            <div class="guide-demo">
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="top-bar-container">
+                            <div class="top-bar-left">
+                                <a href="#" class="top-bar-item">
+                                    <span class="top-bar-icon icon-study"></span>
+                                    Estudios lumínicos
+                                </a>
+                                <a href="#" class="top-bar-item">
+                                    <span class="top-bar-icon icon-warranty"></span>
+                                    Garantía de 5 años
+                                </a>
+                                <a href="#" class="top-bar-item">
+                                    <span class="top-bar-icon icon-finance"></span>
+                                    Financiación
+                                </a>
+                            </div>
+                            
+                            <div class="top-bar-right">
+                                <a href="#" class="top-bar-item">
+                                    <span class="top-bar-icon icon-clock"></span>
+                                    L-J: 8:00h a 18:00h. V: 8:00h a 15:00h
+                                </a>
+                                <a href="tel:+34945292773" class="top-bar-item">
+                                    <span class="top-bar-icon icon-phone"></span>
+                                    (+34) 945 292 773
+                                </a>
+                                <a href="mailto:info@filux.com" class="top-bar-item">
+                                    <span class="top-bar-icon icon-mail"></span>
+                                    info@filux.com
+                                </a>
+                                <a href="#" class="top-bar-pro">
+                                    SOLICITAR ALTA PRO
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+&lt;div class="top-bar"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="top-bar-container"&gt;
+            &lt;div class="top-bar-left"&gt;
+                &lt;a href="#" class="top-bar-item"&gt;
+                    &lt;span class="top-bar-icon icon-study"&gt;&lt;/span&gt;
+                    Estudios lumínicos
+                &lt;/a&gt;
+                &lt;a href="#" class="top-bar-item"&gt;
+                    &lt;span class="top-bar-icon icon-warranty"&gt;&lt;/span&gt;
+                    Garantía de 5 años
+                &lt;/a&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="top-bar-right"&gt;
+                &lt;a href="tel:+34945292773" class="top-bar-item"&gt;
+                    &lt;span class="top-bar-icon icon-phone"&gt;&lt;/span&gt;
+                    (+34) 945 292 773
+                &lt;/a&gt;
+                &lt;a href="#" class="top-bar-pro"&gt;SOLICITAR ALTA PRO&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Header -->
+        <section class="guide-section">
+            <h2 class="section-title">Header Minimalista</h2>
+            <p class="text-secondary mb-8">
+                Navegación limpia con logo elegante y menú enfocado en el contenido principal. 
+                Búsqueda prominente con input field y carrito de compras visible. Sticky con blur effect.
+            </p>
+
+            <div class="guide-demo">
+                <header class="header" style="position: relative; top: auto;">
+                    <div class="container">
+                        <div class="header-container">
+                            <a href="#" class="header-logo">
+                                <img src="img/logo.png" alt="FILUX" class="header-logo-img">
+                            </a>
+                            <nav class="header-nav">
+                                <a href="#" class="header-nav-link active">Productos</a>
+                                <a href="#" class="header-nav-link">Descargas</a>
+                                <a href="#" class="header-nav-link">Blog</a>
+                                <a href="#" class="header-nav-link">Contacto</a>
+                            </nav>
+                            <div class="header-actions">
+                                <div class="header-search">
+                                    <span class="header-search-icon">🔍</span>
+                                    <input 
+                                        type="search" 
+                                        class="header-search-input" 
+                                        placeholder="Busca tu producto"
+                                        autocomplete="off"
+                                        autocorrect="off"
+                                        autocapitalize="off"
+                                        spellcheck="false"
+                                    >
+                                </div>
+                                <a href="#" class="header-cart">
+                                    <span>🛒</span>
+                                    Carrito (0)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <div class="guide-code">
+&lt;header class="header"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="header-container"&gt;
+            &lt;a href="#" class="header-logo"&gt;
+                &lt;img src="img/logo.png" alt="FILUX" class="header-logo-img"&gt;
+            &lt;/a&gt;
+            &lt;nav class="header-nav"&gt;
+                &lt;a href="#" class="header-nav-link active"&gt;Productos&lt;/a&gt;
+                &lt;a href="#" class="header-nav-link"&gt;Descargas&lt;/a&gt;
+                &lt;a href="#" class="header-nav-link"&gt;Blog&lt;/a&gt;
+                &lt;a href="#" class="header-nav-link"&gt;Contacto&lt;/a&gt;
+            &lt;/nav&gt;
+            &lt;div class="header-actions"&gt;
+                &lt;div class="header-search"&gt;
+                    &lt;span class="header-search-icon"&gt;🔍&lt;/span&gt;
+                    &lt;input type="search" class="header-search-input" 
+                           placeholder="Busca tu producto"&gt;
+                &lt;/div&gt;
+                &lt;a href="#" class="header-cart"&gt;Carrito (0)&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="guide-section">
+            <h2 class="section-title">Hero Section - Alta PRO</h2>
+            <p class="text-secondary mb-8">
+                Hero enfocado en convertir visitantes en profesionales registrados. 
+                Destaca beneficios exclusivos y incentiva la acción inmediata.
+            </p>
+
+            <div class="guide-demo">
+                <div class="hero hero-pro">
+                    <div class="container">
+                        <div class="grid grid-2-cols gap-8 items-center">
+                            <div class="hero-content">
+                                <h1 class="hero-title">Iluminación LED Profesional</h1>
+                                <p class="hero-description">
+                                    Benefíciate de las ventajas y descuentos exclusivos para profesionales del sector de la iluminación.
+                                </p>
+                                <div class="hero-cta">
+                                    <button class="btn btn-primary">
+                                        <img src="img/X-PRO.svg" alt="X-PRO" class="btn-icon">
+                                        Registro PRO
+                                    </button>
+                                    <button class="btn btn-outline">Ver catálogo</button>
+                                </div>
+                            </div>
+                            <div class="hero-image">
+                                <img src="img/proyector.png" 
+                                     alt="Iluminación LED Profesional" 
+                                     style="width: 100%; height: auto; max-width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="guide-code">
+&lt;div class="hero hero-pro"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="hero-content"&gt;
+            &lt;h1 class="hero-title"&gt;ILUMINACIÓN LED PROFESIONAL&lt;/h1&gt;
+            &lt;p class="hero-description"&gt;
+                Benefíciate de las ventajas y descuentos exclusivos para profesionales.
+            &lt;/p&gt;
+            &lt;div class="hero-cta"&gt;
+                &lt;button class="btn btn-gradient btn-xl"&gt;
+                    SOLICITAR ALTA PRO
+                    &lt;img src="img/X-PRO.svg" alt="PRO"&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </div>
+
+        <!-- Navegación de Categorías -->
+        <section class="guide-section">
+            <h2 class="section-title">Navegación de Categorías</h2>
+            <p class="text-secondary mb-8">
+                Filtros horizontales para navegar por las diferentes categorías de productos. 
+                Estilo pill con estado activo sutil usando los colores corporativos.
+            </p>
+
+            <div class="guide-demo">
+                <nav class="category-nav">
+                    <a href="#" class="category-nav-item active">Todas las Categorías</a>
+                    <a href="#" class="category-nav-item">Iluminación Interior</a>
+                    <a href="#" class="category-nav-item">Iluminación Exterior</a>
+                    <a href="#" class="category-nav-item">Arquitectural</a>
+                    <a href="#" class="category-nav-item">Decorativa</a>
+                    <a href="#" class="category-nav-item">Sistemas Inteligentes</a>
+                </nav>
+            </div>
+
+            <div class="guide-code">
+&lt;nav class="category-nav"&gt;
+    &lt;a href="#" class="category-nav-item active"&gt;Todas las Categorías&lt;/a&gt;
+    &lt;a href="#" class="category-nav-item"&gt;Iluminación Interior&lt;/a&gt;
+    &lt;a href="#" class="category-nav-item"&gt;Iluminación Exterior&lt;/a&gt;
+    &lt;a href="#" class="category-nav-item"&gt;Arquitectural&lt;/a&gt;
+    &lt;a href="#" class="category-nav-item"&gt;Decorativa&lt;/a&gt;
+&lt;/nav&gt;
+            </div>
+
+
+        <!-- Nueva Sección Categorías con PNG - Versión Original (14 categorías) -->
+        <section class="guide-section">
+            <h2 class="section-title">Sección Categorías PNG - Versión Original (7×2)</h2>
+            <p class="text-secondary mb-8">
+                Versión original con todas las 14 categorías: 7 por fila en desktop, completamente responsive.
+                Incluye todas las categorías disponibles: Sensores y Regletas incluidas.
+            </p>
+
+            <div class="guide-demo">
+                <div class="categories-section">
+                    <div class="container">
+                        <div class="categories-grid" style="grid-template-columns: repeat(7, 1fr); gap: var(--space-3);">
+                            <div class="category-item-png" style="background-image: url(img/categorias/campana.png);">
+                                <a href="#campanas">
+                                    <span class="category-name">Campanas</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/proyector.png);">
+                                <a href="#proyectores">
+                                    <span class="category-name">Proyectores</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/farola_con_palo.png);">
+                                <a href="#farolas">
+                                    <span class="category-name">Farolas</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/pantalla.png);">
+                                <a href="#estancas">
+                                    <span class="category-name">Estancas</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/tubo.png);">
+                                <a href="#tubos">
+                                    <span class="category-name">Tubos</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/pantalla.png);">
+                                <a href="#regletas">
+                                    <span class="category-name">Regletas</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/panel.png);">
+                                <a href="#paneles">
+                                    <span class="category-name">Paneles</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/dowlight.png);">
+                                <a href="#downlights">
+                                    <span class="category-name">Downlights</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/plafon.png);">
+                                <a href="#plafones">
+                                    <span class="category-name">Plafones LED</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/detector.png);">
+                                <a href="#sensores">
+                                    <span class="category-name">Sensores</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/Emergencai.png);">
+                                <a href="#emergencia">
+                                    <span class="category-name">Emergencia</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/Solar.png);">
+                                <a href="#solares">
+                                    <span class="category-name">Solares</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/tira_led.png);">
+                                <a href="#tiras">
+                                    <span class="category-name">Tiras</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png" style="background-image: url(img/categorias/bombilla.png);">
+                                <a href="#bombillas">
+                                    <span class="category-name">Bombillas</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+&lt;!-- Versión Original 7×2 (14 categorías) --&gt;
+&lt;div class="categories-section"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="categories-grid" style="grid-template-columns: repeat(7, 1fr);"&gt;
+      &lt;div class="category-item-png" style="background-image: url(img/categorias/campana.png);"&gt;
+        &lt;a href="#campanas"&gt;&lt;span class="category-name"&gt;Campanas&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- 13 categorías más incluyendo Sensores y Regletas... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Nueva Sección Categorías con PNG - Versión Optimizada (12 categorías) -->
+        <section class="guide-section">
+            <h2 class="section-title">Sección Categorías PNG - Versión Optimizada (4×3)</h2>
+            <p class="text-secondary mb-8">
+                Nueva versión optimizada usando imágenes PNG locales con layout de 4 por fila (3 filas × 4 categorías = 12 total).
+                Elimina Sensores y Regletas para lograr un diseño más equilibrado y profesional. Categorías más altas para mejor visualización.
+            </p>
+
+            <div class="guide-demo">
+                <div class="categories-section">
+                    <div class="container">
+                        <div class="categories-grid categories-grid-tall">
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/campana.png);">
+                                <a href="#campanas">
+                                    <span class="category-name">Campanas</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/proyector.png);">
+                                <a href="#proyectores">
+                                    <span class="category-name">Proyectores</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/farola_con_palo.png);">
+                                <a href="#farolas">
+                                    <span class="category-name">Farolas</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/pantalla.png);">
+                                <a href="#estancas">
+                                    <span class="category-name">Estancas</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/tubo.png);">
+                                <a href="#tubos">
+                                    <span class="category-name">Tubos</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/panel.png);">
+                                <a href="#paneles">
+                                    <span class="category-name">Paneles</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/dowlight.png);">
+                                <a href="#downlights">
+                                    <span class="category-name">Downlights</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/plafon.png);">
+                                <a href="#plafones">
+                                    <span class="category-name">Plafones LED</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/Emergencai.png);">
+                                <a href="#emergencia">
+                                    <span class="category-name">Emergencia</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/Solar.png);">
+                                <a href="#solares">
+                                    <span class="category-name">Solares</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/tira_led.png);">
+                                <a href="#tiras">
+                                    <span class="category-name">Tiras</span>
+                                </a>
+                            </div>
+                            <div class="category-item-png category-item-tall" style="background-image: url(img/categorias/bombilla.png);">
+                                <a href="#bombillas">
+                                    <span class="category-name">Bombillas</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+&lt;!-- Versión Optimizada 4×3 (12 categorías) con altura aumentada --&gt;
+&lt;div class="categories-section"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="categories-grid categories-grid-tall"&gt;
+      &lt;div class="category-item-png category-item-tall" style="background-image: url(img/categorias/campana.png);"&gt;
+        &lt;a href="#campanas"&gt;&lt;span class="category-name"&gt;Campanas&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="category-item-png category-item-tall" style="background-image: url(img/categorias/proyector.png);"&gt;
+        &lt;a href="#proyectores"&gt;&lt;span class="category-name"&gt;Proyectores&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- 10 categorías más sin Sensores ni Regletas... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Sección Descarga Catálogo -->
+        <section class="guide-section">
+            <h2 class="section-title">Sección Descarga Catálogo</h2>
+            <p class="text-secondary mb-8">
+                Sección promocional para descarga de catálogo. Layout imagen + texto con CTA prominente.
+                Diseño moderno que incentiva la descarga y captura de leads.
+            </p>
+
+            <div class="guide-demo">
+                <div class="catalog-section">
+                    <div class="container">
+                        <div class="catalog-content">
+                            <div class="catalog-image">
+                                <img src="https://filux.com/upload/steasycontent/catalogo-portadaweb.jpg" alt="Catálogo Iluminación LED 2025">
+                            </div>
+                            <div class="catalog-text">
+                                <h2>Descarga nuestro catálogo</h2>
+                                <h3>Iluminación LED Profesional 2025</h3>
+                                <p>Te invitamos a descubrir nuestra amplia gama de productos de iluminación LED descargando nuestro catálogo actualizado. <strong>Encuentra todo lo que necesitas en un solo lugar.</strong></p>
+                                <p>Soluciones eficientes, productos innovadores y las últimas novedades del sector. Todo lo que necesitas saber sobre nuestras propuestas de iluminación está recogido en estas páginas.</p>
+                                <div class="catalog-cta">
+                                    <a href="/upload/steasycontent/catalogo-2025.pdf" target="_blank" class="download-btn">
+                                        <svg fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                                            <polyline points="14,2 14,8 20,8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                            <polyline points="10,9 9,9 8,9"/>
+                                        </svg>
+                                        DESCARGAR CATÁLOGO
+                                    </a>
+                                </div>
+                                <div class="catalog-features">
+                                    <div class="catalog-feature">
+                                        <svg fill="currentColor" viewBox="0 0 24 24">
+                                            <polyline points="20,6 9,17 4,12"/>
+                                        </svg>
+                                        Más de 500 productos
+                                    </div>
+                                    <div class="catalog-feature">
+                                        <svg fill="currentColor" viewBox="0 0 24 24">
+                                            <polyline points="20,6 9,17 4,12"/>
+                                        </svg>
+                                        Precios actualizados 2025
+                                    </div>
+                                    <div class="catalog-feature">
+                                        <svg fill="currentColor" viewBox="0 0 24 24">
+                                            <polyline points="20,6 9,17 4,12"/>
+                                        </svg>
+                                        Descarga gratuita
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+&lt;div class="catalog-section"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="catalog-content"&gt;
+      &lt;div class="catalog-image"&gt;
+        &lt;img src="..." alt="Catálogo Iluminación LED 2025"&gt;
+      &lt;/div&gt;
+      &lt;div class="catalog-text"&gt;
+        &lt;h2&gt;¡Descárgate nuestro catálogo!&lt;/h2&gt;
+        &lt;h3&gt;Iluminación LED Profesional 2025&lt;/h3&gt;
+        &lt;p&gt;Descripción del catálogo...&lt;/p&gt;
+        &lt;div class="catalog-cta"&gt;
+          &lt;a href="..." class="download-btn"&gt;
+            &lt;svg&gt;...&lt;/svg&gt;
+            DESCARGAR CATÁLOGO
+          &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="catalog-features"&gt;
+          &lt;div class="catalog-feature"&gt;
+            &lt;svg&gt;...&lt;/svg&gt;
+            Más de 500 productos
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Sección Beneficios/Ventajas -->
+        <section class="guide-section">
+            <h2 class="section-title">Sección Beneficios y Ventajas</h2>
+            <p class="text-secondary mb-8">
+                Grid de 5 beneficios principales. Layout responsive que se adapta a 3 columnas (tablet) y 2 columnas (móvil).
+                Destaca las ventajas competitivas y genera confianza en el cliente.
+            </p>
+
+            <div class="guide-demo">
+                <div class="benefits-section">
+                    <div class="container">
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <img src="https://filux.com/upload/steasycontent/entrega24h-banner.svg" alt="Entregas en 24/48h" class="benefit-icon">
+                                <h3 class="benefit-title">Entregas en 24/48h</h3>
+                                <p class="benefit-description">De nuestro almacén directo a tu ubicación en tiempo récord. Y si no contamos con stock, se fabricará a demanda.</p>
+                                <span class="benefit-highlight">¡Nunca sin el producto!</span>
+                            </div>
+                            <div class="benefit-item">
+                                <img src="https://filux.com/upload/steasycontent/serviciopostventa-banner-ico.svg" alt="Servicio postventa" class="benefit-icon">
+                                <h3 class="benefit-title">Servicio postventa</h3>
+                                <p class="benefit-description">Nuestro equipo de atención al cliente siempre dispuesto a ayudarte, resolver tus dudas e incidencias.</p>
+                                <span class="benefit-highlight">¡Cuenta con nosotros!</span>
+                            </div>
+                            <div class="benefit-item">
+                                <img src="https://filux.com/upload/steasycontent/garantia5a-banner-ico.svg" alt="Garantía hasta 5 años" class="benefit-icon">
+                                <h3 class="benefit-title">Garantía hasta 5 años</h3>
+                                <p class="benefit-description">Filux garantiza entre dos y cinco años el funcionamiento de sus productos e incluye reparación o reposición.</p>
+                                <span class="benefit-highlight">¡Producto de calidad!</span>
+                            </div>
+                            <div class="benefit-item">
+                                <img src="https://filux.com/upload/steasycontent/pro-banner-ico.svg" alt="Dirigido a profesionales" class="benefit-icon">
+                                <h3 class="benefit-title">Dirigido a profesionales</h3>
+                                <p class="benefit-description">Trabaja con nosotros, benefíciate de nuestras ventajas exclusivas y ofrece presupuestos competitivos.</p>
+                                <span class="benefit-highlight">¡Solicita presupuesto!</span>
+                            </div>
+                            <div class="benefit-item">
+                                <img src="https://filux.com/upload/steasycontent/equipotec-banner-ico1.svg" alt="Equipo técnico" class="benefit-icon">
+                                <h3 class="benefit-title">Equipo técnico</h3>
+                                <p class="benefit-description">Con departamento de ingeniería para brindar las mejores soluciones y asesoramiento técnico.</p>
+                                <span class="benefit-highlight">¡Llámanos ya!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+&lt;div class="benefits-section"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="benefits-grid"&gt;
+      &lt;div class="benefit-item"&gt;
+        &lt;img src="..." alt="..." class="benefit-icon"&gt;
+        &lt;h3 class="benefit-title"&gt;Entregas en 24/48h&lt;/h3&gt;
+        &lt;p class="benefit-description"&gt;Descripción del beneficio...&lt;/p&gt;
+        &lt;span class="benefit-highlight"&gt;¡Call to action!&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;!-- 4 más beneficios... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Product Cards -->
+        <section class="guide-section">
+            <h2 class="section-title">Tarjetas de Producto</h2>
+            <p class="text-secondary mb-8">
+                Cards elegantes con hover suave. Información clara y jerarquizada. 
+                Imágenes protagonistas con especificaciones discretas.
+            </p>
+
+            <div class="guide-demo">
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <div class="product-card" style="position: relative;">
+                        <div class="product-badge">Nuevo</div>
+                        <div class="product-image" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); display: flex; align-items: center; justify-content: center; color: #adb5bd;">
+                            Imagen 1:1
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Lámparas de Mesa</div>
+                            <h3 class="product-title">Lámpara Minimal Oak</h3>
+                            <p class="product-description">
+                                Diseño minimalista en madera de roble natural con acabado mate.
+                            </p>
+                            <div class="product-specs">
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Potencia</div>
+                                    <div class="product-spec-value">15W</div>
+                                </div>
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Temp.</div>
+                                    <div class="product-spec-value">3000K</div>
+                                </div>
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Dimmer</div>
+                                    <div class="product-spec-value">Sí</div>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <span class="product-price-value">€299<span class="product-price-unit">IVA inc.</span></span>
+                            </div>
+                            <button class="btn btn-secondary btn-full">Ver Detalles</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image" style="background: linear-gradient(135deg, #2d3748, #4a5568); display: flex; align-items: center; justify-content: center; color: #a0aec0;">
+                            Imagen 1:1
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Iluminación Arquitectural</div>
+                            <h3 class="product-title">Panel LED Invisible</h3>
+                            <p class="product-description">
+                                Integración perfecta en techos y paredes con tecnología edge-lit.
+                            </p>
+                            <div class="product-specs">
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Potencia</div>
+                                    <div class="product-spec-value">40W</div>
+                                </div>
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Flujo</div>
+                                    <div class="product-spec-value">4800lm</div>
+                                </div>
+                                <div class="product-spec">
+                                    <div class="product-spec-label">CRI</div>
+                                    <div class="product-spec-value">95+</div>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <span class="product-price-value">€450<span class="product-price-unit">IVA inc.</span></span>
+                            </div>
+                            <button class="btn btn-primary btn-full">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image" style="background: linear-gradient(135deg, #faf5ff, #f3e8ff); display: flex; align-items: center; justify-content: center; color: #a78bfa;">
+                            Imagen 1:1
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Iluminación Decorativa</div>
+                            <h3 class="product-title">Colgante Copper</h3>
+                            <p class="product-description">
+                                Luminaria suspendida en cobre brushed con cristal soplado artesanal.
+                            </p>
+                            <div class="product-specs">
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Material</div>
+                                    <div class="product-spec-value">Cobre</div>
+                                </div>
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Altura</div>
+                                    <div class="product-spec-value">35cm</div>
+                                </div>
+                                <div class="product-spec">
+                                    <div class="product-spec-label">Garantía</div>
+                                    <div class="product-spec-value">5 años</div>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <span class="product-price-value">€680<span class="product-price-unit">IVA inc.</span></span>
+                            </div>
+                            <button class="btn btn-gradient btn-full">Ver Detalles Premium</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+&lt;div class="product-card"&gt;
+    &lt;img src="..." alt="..." class="product-image"&gt;
+    &lt;div class="product-info"&gt;
+        &lt;div class="product-category"&gt;Categoría&lt;/div&gt;
+        &lt;h3 class="product-title"&gt;Nombre del Producto&lt;/h3&gt;
+        &lt;p class="product-description"&gt;Descripción breve...&lt;/p&gt;
+        &lt;div class="product-price"&gt;
+            &lt;span class="product-price-value"&gt;€299&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button class="btn btn-primary btn-full"&gt;Ver Detalles&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="guide-section">
+            <h2 class="section-title">Footer Elegante</h2>
+            <p class="text-secondary mb-8">
+                Footer minimalista con información esencial. Fondo oscuro que aporta elegancia y contraste.
+            </p>
+
+            <div class="guide-demo">
+                <footer class="footer" style="margin: 0;">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-brand">
+                                <h3 class="footer-logo">FILUX</h3>
+                                <p class="footer-description">
+                                    Especialistas en iluminación premium para proyectos residenciales 
+                                    y comerciales de alta gama.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="footer-section-title">Productos</h4>
+                                <ul class="footer-links">
+                                    <li><a href="#">Iluminación Interior</a></li>
+                                    <li><a href="#">Iluminación Exterior</a></li>
+                                    <li><a href="#">Sistemas Inteligentes</a></li>
+                                    <li><a href="#">Proyectos Personalizados</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="footer-section-title">Servicios</h4>
+                                <ul class="footer-links">
+                                    <li><a href="#">Consultoría</a></li>
+                                    <li><a href="#">Instalación</a></li>
+                                    <li><a href="#">Mantenimiento</a></li>
+                                    <li><a href="#">Garantía</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="footer-section-title">Contacto</h4>
+                                <ul class="footer-links">
+                                    <li><a href="#">+34 900 123 456</a></li>
+                                    <li><a href="#">info@filux.com</a></li>
+                                    <li><a href="#">Madrid, España</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2025 Filux. Todos los derechos reservados.</p>
+                            <div class="flex gap-4">
+                                <a href="#" class="text-sm">Privacidad</a>
+                                <a href="#" class="text-sm">Términos</a>
+                                <a href="#" class="text-sm">Cookies</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Espaciado y Grid -->
+        <section class="guide-section">
+            <h2 class="section-title">Sistema de Espaciado y Grid</h2>
+            <p class="text-secondary mb-8">
+                Espacios en blanco generosos que permiten respirar al contenido. 
+                Grid flexible que se adapta a diferentes tamaños de pantalla.
+            </p>
+
+            <div class="guide-demo">
+                <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
+                    <div style="background: var(--color-gray-100); padding: var(--space-4); text-align: center; border-radius: var(--border-radius-base);">
+                        Grid Item 1
+                    </div>
+                    <div style="background: var(--color-gray-100); padding: var(--space-4); text-align: center; border-radius: var(--border-radius-base);">
+                        Grid Item 2
+                    </div>
+                    <div style="background: var(--color-gray-100); padding: var(--space-4); text-align: center; border-radius: var(--border-radius-base);">
+                        Grid Item 3
+                    </div>
+                    <div style="background: var(--color-gray-100); padding: var(--space-4); text-align: center; border-radius: var(--border-radius-base);">
+                        Grid Item 4
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+/* Sistema de espaciado basado en múltiplos de 4px */
+--space-1: 0.25rem;  /* 4px */
+--space-4: 1rem;     /* 16px */
+--space-8: 2rem;     /* 32px */
+--space-16: 4rem;    /* 64px */
+--space-24: 6rem;    /* 96px */
+--space-32: 8rem;    /* 128px */
+
+/* Grid responsive */
+.grid { display: grid; gap: var(--space-6); }
+.lg\\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+            </div>
+        </section>
+
+        <!-- Performance y Optimización -->
+        <section class="guide-section">
+            <h2 class="section-title">Performance y Optimización</h2>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-medium mb-4">Carga Optimizada</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• Una sola familia tipográfica (Inter)</li>
+                        <li>• Solo 5 pesos de fuente necesarios</li>
+                        <li>• CSS Variables para fácil mantenimiento</li>
+                        <li>• Imágenes con aspect-ratio 1:1 optimizadas</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium mb-4">Accesibilidad</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• Contraste AAA en todos los textos</li>
+                        <li>• Estados de focus visibles</li>
+                        <li>• Navegación por teclado completa</li>
+                        <li>• Textos escalables hasta 200%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-code">
+/* Una sola importación de fuente - Reducción del 75% en carga */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Variables CSS para mantenimiento fácil */
+:root {
+  --font-family: 'Inter', system-ui, sans-serif;
+  --color-accent: #d4af37;
+  --transition-base: 0.25s ease-out;
+}
+            </div>
+        </section>
+
+        <!-- Conclusiones -->
+        <footer class="guide-section text-center">
+            <h2 class="section-title">Implementación</h2>
+            <p class="text-lead text-secondary mb-8">
+                Este sistema de diseño está listo para implementar. Todos los componentes son modulares, 
+                accesibles y optimizados para conversión en e-commerce premium.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <button class="btn btn-gradient btn-lg">Implementar Sistema Corporativo</button>
+                <button class="btn btn-corporate btn-lg">Descargar Recursos</button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
