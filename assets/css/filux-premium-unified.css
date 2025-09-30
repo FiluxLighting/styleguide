@@ -59,12 +59,12 @@
   --color-gray-900: #171717;
   
   /* === COLORES CORPORATIVOS FILUX === */
-  --color-accent-primary: #7CB518;    /* C:55 M:0 Y:100 K:0 - Verde corporativo */
+  --color-accent-primary: #6B7280;    /* Gris moderno elegante */
   --color-accent-secondary: #333;  /* C:90 M:50 Y:0 K:0 - Azul corporativo */
   --color-accent: var(--color-accent-primary);
-  --color-accent-light: #A0D040;      /* Verde más claro */
-  --color-accent-dark: #5D8711;       /* Verde más oscuro */
-  --color-accent-muted: #E8F4D6;      /* Verde muy tenue */
+  --color-accent-light: #9CA3AF;      /* Gris más claro */
+  --color-accent-dark: #4B5563;       /* Gris más oscuro */
+  --color-accent-muted: #F3F4F6;      /* Gris muy tenue */
   --color-accent-gradient: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
   
   /* === COLORES SEMÁNTICOS === */
