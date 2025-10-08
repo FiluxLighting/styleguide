@@ -256,9 +256,14 @@
 
 /* Respeta las preferencias de movimiento del usuario */
 @media (prefers-reduced-motion: reduce) {
-  .shine-effect::before,
-  .top-bar-pro::before {
+  .shine-effect::before {
     animation: none;
+  }
+  
+  /* Mantener animación en botón PRO independientemente de la preferencia */
+  .top-bar-pro::before {
+    animation: reflejoPro 3s ease-in-out infinite !important;
+    animation-delay: 1s !important;
   }
 }
 
@@ -717,7 +722,7 @@ strong, b {
   justify-content: center;
   flex-shrink: 0;
   line-height: 1;
-  font-size: 16px;
+  font-size: 20px;
   vertical-align: middle;
   margin-right: 0.5rem;
 }
@@ -769,6 +774,8 @@ strong, b {
   );
   animation: reflejoPro 3s ease-in-out infinite;
   animation-delay: 1s;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .top-bar-pro:hover {
@@ -1334,10 +1341,14 @@ strong, b {
   text-align: center;
   padding: var(--space-6);
   border-radius: var(--border-radius-lg);
-  transition: var(--transition-base);
   background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border-light);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
+
+
 
 .benefit-item:hover {
   transform: translateY(-4px);
@@ -1702,13 +1713,37 @@ strong, b {
     gap: var(--space-4);
   }
   
-  /* Beneficios */
+  /* Beneficios - Solo mostrar 3 de 5 con rotación automática */
   .benefits-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
   }
   
-  /* Top bar */
+  /* Rotación solo funciona en este breakpoint */
+
+  
+  /* Top bar - Reorganizar en pantallas medianas */
+  .top-bar-left {
+    display: none; /* Ocultar toda la sección izquierda del topbar */
+  }
+  
+  /* Reorganizar top-bar-right para aprovechar el espacio */
+  .top-bar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  /* Agrupar horarios y contacto a la izquierda */
+  .top-bar-right .top-bar-item:not(.top-bar-pro) {
+    order: 1;
+  }
+  
+  /* Mantener botón PRO a la derecha */
+  .top-bar-right .top-bar-pro {
+    order: 2;
+    margin-left: auto;
+  }
+  
   .top-bar-left,
   .top-bar-right {
     gap: var(--space-2);
@@ -1918,10 +1953,18 @@ strong, b {
     flex-direction: column;
     gap: var(--space-2);
     min-height: auto;
+    align-items: flex-start; /* Alinear todos los elementos a la izquierda */
+  }
+  
+  /* Sobrescribir la regla del breakpoint 1200px */
+  .top-bar-right {
+    justify-content: flex-start; /* Cambiar de space-between a flex-start */
   }
   
   .top-bar-pro {
     margin-top: var(--space-1);
+    margin-left: 0 !important; /* Sobrescribir el margin-left: auto del breakpoint 1200px */
+    order: initial; /* Resetear el order */
   }
   
   .top-bar-pro::before {

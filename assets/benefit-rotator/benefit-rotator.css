@@ -1,0 +1,57 @@
+/* ========================================================================
+   BENEFIT ROTATOR - Sistema de rotación responsive para benefit-items
+   ======================================================================== */
+
+/* Estados de rotación - aplicados por JavaScript */
+.benefit-item.hidden {
+  display: none !important;
+}
+
+.benefit-item.visible {
+  display: block !important;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Estado inicial: mostrar todos los elementos por defecto */
+.benefit-item {
+  display: block;
+}
+
+/* Animaciones para entrada y salida */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+}
+
+/* Responsive behavior for different breakpoints */
+@media (max-width: 1200px) {
+  /* Tablet: 3 elementos con rotación */
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile: 1 elemento con rotación */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
