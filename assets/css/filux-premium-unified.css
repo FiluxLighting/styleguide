@@ -823,6 +823,13 @@ strong, b {
   padding: var(--space-2) 0;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
 .header-logo {
   font-size: var(--text-2xl);
   font-weight: var(--font-light);
@@ -873,10 +880,48 @@ strong, b {
   width: 100%;
 }
 
+/* Menú hamburguesa */
+.header-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 4px;
+  margin-right: var(--space-2);
+}
+
+.hamburger-line {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animación hamburguesa activa */
+.header-hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.header-hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header-hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 .header-actions {
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  flex-shrink: 0;
 }
 
 .header-search {
@@ -915,7 +960,8 @@ strong, b {
   transform: translateY(-50%);
   color: var(--color-text-muted);
   pointer-events: none;
-  font-size: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .header-cart {
@@ -927,10 +973,17 @@ strong, b {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
   transition: color var(--transition-base);
+  white-space: nowrap;
 }
 
 .header-cart:hover {
   color: var(--color-accent);
+}
+
+.header-cart svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* ========================================================================
@@ -1755,6 +1808,19 @@ strong, b {
 }
 
 @media (max-width: 1024px) {
+  /* Header - Mostrar hamburguesa y ocultar navegación */
+  .header-nav {
+    display: none;
+  }
+  
+  .header-hamburger {
+    display: flex;
+  }
+  
+  .header-search {
+    min-width: 200px;
+  }
+  
   /* Hero */
   .hero-content {
     max-width: 60%;
@@ -1775,11 +1841,6 @@ strong, b {
   .footer-content {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-8);
-  }
-  
-  /* Header */
-  .header-search {
-    min-width: 200px;
   }
 }
 
@@ -1812,10 +1873,6 @@ strong, b {
   .header-container {
     flex-wrap: wrap;
     gap: var(--space-3);
-  }
-  
-  .header-nav {
-    display: none;
   }
   
   .header-logo-img {
