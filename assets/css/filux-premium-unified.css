@@ -708,6 +708,20 @@ strong, b {
 .icon-phone::before { content: "☎"; color: var(--color-accent); }
 .icon-mail::before { content: "✉"; color: var(--color-accent); }
 
+/* Iconos para footer - tamaño ajustado al texto */
+.footer-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
 .top-bar-pro {
   background: var(--color-gray-600);
   color: var(--color-white);
