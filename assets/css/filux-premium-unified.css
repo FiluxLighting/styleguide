@@ -133,6 +133,11 @@
   --transition-base: 0.25s ease-out;
   --transition-slow: 0.4s ease-out;
   
+  /* === ANIMACIONES === */
+  --animation-duration-fast: 1.5s;
+  --animation-duration-base: 2s;
+  --animation-duration-slow: 3s;
+  
   /* === Z-INDEX SCALE === */
   --z-dropdown: 1000;
   --z-sticky: 1020;
@@ -141,6 +146,120 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
+}
+
+/* ========================================================================
+   2.1. ANIMACIONES Y KEYFRAMES
+   ======================================================================== */
+
+/* Animación de reflejo para botones especiales */
+@keyframes reflejoPro {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ========================================================================
+   2.2. CLASES DE ANIMACIÓN REUTILIZABLES
+   ======================================================================== */
+
+/* Efecto de reflejo - Base */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: reflejoPro 3s ease-in-out infinite;
+  animation-delay: 1s;
+  pointer-events: none;
+}
+
+/* Variaciones de velocidad */
+.shine-effect--fast::before {
+  animation-duration: 2s;
+}
+
+.shine-effect--slow::before {
+  animation-duration: 4s;
+}
+
+/* Variaciones de intensidad */
+.shine-effect--subtle::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+.shine-effect--bright::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+}
+
+/* Variaciones de ancho */
+.shine-effect--narrow::before {
+  width: 20%;
+}
+
+.shine-effect--wide::before {
+  width: 40%;
+}
+
+/* Sin delay para activación inmediata */
+.shine-effect--immediate::before {
+  animation-delay: 0s;
+}
+
+/* Solo en hover */
+.shine-effect--hover::before {
+  animation-play-state: paused;
+}
+
+.shine-effect--hover:hover::before {
+  animation-play-state: running;
+}
+
+/* Para elementos oscuros - reflejo oscuro */
+.shine-effect--dark::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.3),
+    transparent
+  );
+}
+
+/* Respeta las preferencias de movimiento del usuario */
+@media (prefers-reduced-motion: reduce) {
+  .shine-effect::before,
+  .top-bar-pro::before {
+    animation: none;
+  }
 }
 
 /* ========================================================================
@@ -534,7 +653,7 @@ strong, b {
   background-color: var(--color-gray-900);
   color: var(--color-gray-300);
   font-size: var(--text-xs);
-  padding: var(--space-2) 0;
+  padding: var(--space-1) 0;
   border-bottom: 1px solid var(--color-gray-800);
   overflow: hidden;
 }
@@ -590,7 +709,7 @@ strong, b {
 .icon-mail::before { content: "✉"; color: var(--color-accent); }
 
 .top-bar-pro {
-  background: var(--color-accent-gradient);
+  background: var(--color-gray-600);
   color: var(--color-white);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--border-radius-base);
@@ -600,19 +719,55 @@ strong, b {
   letter-spacing: 0.8px;
   white-space: nowrap;
   line-height: 1.2;
-  box-shadow: 0 2px 8px rgba(124, 181, 24, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(82, 82, 82, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   position: relative;
   overflow: hidden;
   text-decoration: none;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.top-bar-pro .btn-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1); /* Hace el icono blanco */
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+  margin-right: 0; /* Sin margen derecho - usa gap del contenedor */
+}
+
+/* Efecto de reflejo animado que pasa por el botón */
+.top-bar-pro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: reflejoPro 3s ease-in-out infinite;
+  animation-delay: 1s;
 }
 
 .top-bar-pro:hover {
   color: var(--color-white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(124, 181, 24, 0.4);
-  background: linear-gradient(135deg, #6A9B15, #1a5490);
+  box-shadow: 0 4px 12px rgba(82, 82, 82, 0.4);
+  background: var(--color-gray-500);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   text-decoration: none;
+}
+
+.top-bar-pro:hover .btn-icon {
+  transform: scale(1.15);
 }
 
 /* ========================================================================
@@ -620,20 +775,31 @@ strong, b {
    ======================================================================== */
 
 .header {
-  background-color: var(--color-bg-primary);
-  border-bottom: 1px solid var(--color-border-light);
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Top bar dentro del header sticky */
+.header .top-bar {
+  background-color: var(--color-gray-900);
+  border-bottom: 1px solid var(--color-gray-800);
+}
+
+/* Main header navigation */
+.header-main {
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-4) 0;
+  padding: var(--space-2) 0;
 }
 
 .header-logo {
@@ -907,6 +1073,9 @@ strong, b {
   margin-bottom: var(--space-8);
 }
 
+/* Versión específica para categorías altas/cuadradas - hereda de .categories-grid */
+/* Las categorías PNG dentro usarán aspect-ratio: 1/1 para mantener proporción cuadrada */
+
 /* Categorías con iconos SVG */
 .category-item {
   text-align: center;
@@ -962,7 +1131,7 @@ strong, b {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 150px;
+  aspect-ratio: 1 / 1; /* Proporción cuadrada siempre */
   display: flex;
   align-items: end;
   justify-content: center;
@@ -1019,9 +1188,9 @@ strong, b {
   line-height: 1.2;
 }
 
-/* Versión alta para categorías PNG (versión 4×3) */
+/* Versión cuadrada para categorías PNG - siempre proporción 1:1 */
 .category-item-tall {
-  min-height: 250px;
+  aspect-ratio: 1 / 1; /* Refuerza la proporción cuadrada */
 }
 
 /* ========================================================================
@@ -1642,8 +1811,8 @@ strong, b {
   }
   
   .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
   
   .category-item {
@@ -1740,6 +1909,11 @@ strong, b {
   .top-bar-pro {
     margin-top: var(--space-1);
   }
+  
+  .top-bar-pro::before {
+    /* Reflejo más lento en móviles */
+    animation-duration: 4s;
+  }
 }
 
 /* Móviles muy pequeños */
@@ -1756,7 +1930,8 @@ strong, b {
   
   /* Categorías */
   .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
   
   /* Beneficios */

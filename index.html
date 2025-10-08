@@ -93,7 +93,7 @@
                 Diseño minimalista, elegante y sofisticado inspirado en galerías de arte.
             </p>
             <div class="flex gap-4">
-                <button class="btn btn-primary"><a href="demo-completa.html" class="a-primary">Ver componentes</a></button>
+                <button class="btn shine-effect btn-primary"><a href="demo-completa.html" class="a-primary">Ver Web Completa</a></button>
                 <div class="btn btn-secondary">Descargar recursos</div>
             </div>
         </header>
@@ -234,6 +234,7 @@ p { font-size: var(--text-base); color: var(--color-text-secondary); }
             <p class="text-secondary mb-8">
                 Botones discretos y elegantes con estados de hover sutiles. 
                 Los colores corporativos se reservan para acciones críticas y elementos de branding.
+                Incluye botón PRO especial con animación de reflejo y efecto de escala en icono.
             </p>
 
             <div class="guide-demo">
@@ -252,6 +253,13 @@ p { font-size: var(--text-base); color: var(--color-text-secondary); }
                     <button class="btn btn-gradient btn-xl">Premium XL</button>
                 </div>
                 
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="#" class="top-bar-pro">
+                        SOLICITAR ALTA PRO
+                        <img src="img/X-PRO.svg" alt="X-PRO" class="btn-icon">
+                    </a>
+                </div>
+                
                 <button class="btn btn-gradient btn-full mb-4">Botón Corporativo Ancho Completo</button>
             </div>
 
@@ -263,8 +271,94 @@ p { font-size: var(--text-base); color: var(--color-text-secondary); }
 &lt;button class="btn btn-gradient"&gt;Gradiente Corporativo&lt;/button&gt;
 &lt;button class="btn btn-ghost"&gt;Discreto&lt;/button&gt;
 
+&lt;!-- Botón PRO especial con animación de reflejo --&gt;
+&lt;a href="#" class="top-bar-pro"&gt;
+    SOLICITAR ALTA PRO
+    &lt;img src="img/X-PRO.svg" alt="X-PRO" class="btn-icon"&gt;
+&lt;/a&gt;
+
 &lt;!-- Botón de ancho completo --&gt;
 &lt;button class="btn btn-gradient btn-full"&gt;Ancho Completo&lt;/button&gt;
+            </div>
+        </section>
+
+        <!-- Efectos de Animación -->
+        <section class="guide-section">
+            <h2 class="section-title">Efectos de Animación - Reflejo</h2>
+            <p class="text-secondary mb-8">
+                Sistema de clases reutilizables para crear efectos de reflejo en elementos. 
+                Compatible con botones, tarjetas y cualquier elemento que necesite un efecto visual atractivo.
+            </p>
+
+            <div class="guide-demo">
+                <h3 class="text-lg font-medium mb-4">Efectos Básicos</h3>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn btn-primary shine-effect">Reflejo Estándar</button>
+                    <button class="btn btn-secondary shine-effect shine-effect--fast">Reflejo Rápido</button>
+                    <button class="btn btn-accent shine-effect shine-effect--slow">Reflejo Lento</button>
+                    <button class="btn btn-corporate shine-effect shine-effect--immediate">Sin Delay</button>
+                </div>
+
+                <h3 class="text-lg font-medium mb-4">Variaciones de Intensidad</h3>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn btn-gradient shine-effect shine-effect--subtle">Sutil</button>
+                    <button class="btn btn-primary shine-effect">Normal</button>
+                    <button class="btn btn-secondary shine-effect shine-effect--bright">Brillante</button>
+                </div>
+
+                <h3 class="text-lg font-medium mb-4">Variaciones de Ancho</h3>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn btn-accent shine-effect shine-effect--narrow">Estrecho</button>
+                    <button class="btn btn-corporate shine-effect">Estándar</button>
+                    <button class="btn btn-gradient shine-effect shine-effect--wide">Ancho</button>
+                </div>
+
+                <h3 class="text-lg font-medium mb-4">Solo en Hover</h3>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn btn-primary shine-effect shine-effect--hover">Hover para Activar</button>
+                    <button class="btn btn-secondary shine-effect shine-effect--hover shine-effect--fast">Hover Rápido</button>
+                </div>
+
+                <h3 class="text-lg font-medium mb-4">En Elementos Oscuros</h3>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="p-4 bg-gray-800 text-white rounded shine-effect shine-effect--dark" style="background: #1f2937; color: white; padding: 1rem; border-radius: 0.5rem;">
+                        Card con reflejo oscuro
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-code">
+&lt;!-- Efectos básicos --&gt;
+&lt;button class="btn btn-primary shine-effect"&gt;Reflejo Estándar&lt;/button&gt;
+&lt;button class="btn btn-secondary shine-effect shine-effect--fast"&gt;Rápido&lt;/button&gt;
+&lt;button class="btn btn-accent shine-effect shine-effect--slow"&gt;Lento&lt;/button&gt;
+
+&lt;!-- Variaciones de intensidad --&gt;
+&lt;button class="btn shine-effect shine-effect--subtle"&gt;Sutil&lt;/button&gt;
+&lt;button class="btn shine-effect"&gt;Normal&lt;/button&gt;
+&lt;button class="btn shine-effect shine-effect--bright"&gt;Brillante&lt;/button&gt;
+
+&lt;!-- Variaciones de ancho --&gt;
+&lt;button class="btn shine-effect shine-effect--narrow"&gt;Estrecho&lt;/button&gt;
+&lt;button class="btn shine-effect shine-effect--wide"&gt;Ancho&lt;/button&gt;
+
+&lt;!-- Solo en hover --&gt;
+&lt;button class="btn shine-effect shine-effect--hover"&gt;Hover para activar&lt;/button&gt;
+
+&lt;!-- Para elementos oscuros --&gt;
+&lt;div class="card shine-effect shine-effect--dark"&gt;Contenido&lt;/div&gt;
+
+/* Clases disponibles */
+.shine-effect              /* Efecto base */
+.shine-effect--fast        /* Animación 2s */  
+.shine-effect--slow        /* Animación 4s */
+.shine-effect--subtle      /* Intensidad baja */
+.shine-effect--bright      /* Intensidad alta */
+.shine-effect--narrow      /* Ancho 20% */
+.shine-effect--wide        /* Ancho 40% */
+.shine-effect--immediate   /* Sin delay */
+.shine-effect--hover       /* Solo en hover */
+.shine-effect--dark        /* Para fondos oscuros */
             </div>
         </section>
 
@@ -310,6 +404,7 @@ p { font-size: var(--text-base); color: var(--color-text-secondary); }
                                 </a>
                                 <a href="#" class="top-bar-pro">
                                     SOLICITAR ALTA PRO
+                                    <img src="img/X-PRO.svg" alt="X-PRO" class="btn-icon">
                                 </a>
                             </div>
                         </div>
@@ -347,16 +442,60 @@ p { font-size: var(--text-base); color: var(--color-text-secondary); }
 
         <!-- Header -->
         <section class="guide-section">
-            <h2 class="section-title">Header Minimalista</h2>
+            <h2 class="section-title">Header Sticky Integrado</h2>
             <p class="text-secondary mb-8">
-                Navegación limpia con logo elegante y menú enfocado en el contenido principal. 
-                Búsqueda prominente con input field y carrito de compras visible. Sticky con blur effect.
+                Header sticky completo que incluye TOP BAR informativo y navegación principal.
+                Navegación limpia con logo elegante, búsqueda prominente y carrito visible. 
+                Efectos premium: blur, borde suave y botón PRO con animación de reflejo.
             </p>
 
             <div class="guide-demo">
                 <header class="header" style="position: relative; top: auto;">
-                    <div class="container">
-                        <div class="header-container">
+                    <!-- TOP BAR integrado -->
+                    <div class="top-bar">
+                        <div class="container">
+                            <div class="top-bar-container">
+                                <div class="top-bar-left">
+                                    <a href="#" class="top-bar-item">
+                                        <span class="top-bar-icon icon-study"></span>
+                                        Estudios lumínicos
+                                    </a>
+                                    <a href="#" class="top-bar-item">
+                                        <span class="top-bar-icon icon-warranty"></span>
+                                        Garantía de 5 años
+                                    </a>
+                                    <a href="#" class="top-bar-item">
+                                        <span class="top-bar-icon icon-finance"></span>
+                                        Financiación
+                                    </a>
+                                </div>
+                                
+                                <div class="top-bar-right">
+                                    <a href="#" class="top-bar-item">
+                                        <span class="top-bar-icon icon-clock"></span>
+                                        L-J: 8:00h a 18:00h. V: 8:00h a 15:00h
+                                    </a>
+                                    <a href="tel:+34945292773" class="top-bar-item">
+                                        <span class="top-bar-icon icon-phone"></span>
+                                        (+34) 945 292 773
+                                    </a>
+                                    <a href="mailto:info@filux.com" class="top-bar-item">
+                                        <span class="top-bar-icon icon-mail"></span>
+                                        info@filux.com
+                                    </a>
+                                    <a href="#" class="top-bar-pro">
+                                        SOLICITAR ALTA PRO
+                                        <img src="img/X-PRO.svg" alt="X-PRO" class="btn-icon">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- MAIN HEADER -->
+                    <div class="header-main">
+                        <div class="container">
+                            <div class="header-container">
                             <a href="#" class="header-logo">
                                 <img src="img/filux.png" alt="FILUX" class="header-logo-img">
                             </a>
@@ -391,8 +530,30 @@ p { font-size: var(--text-base); color: var(--color-text-secondary); }
 
             <div class="guide-code">
 &lt;header class="header"&gt;
-    &lt;div class="container"&gt;
-        &lt;div class="header-container"&gt;
+    &lt;!-- TOP BAR integrado --&gt;
+    &lt;div class="top-bar"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="top-bar-container"&gt;
+                &lt;div class="top-bar-left"&gt;
+                    &lt;a href="#" class="top-bar-item"&gt;
+                        &lt;span class="top-bar-icon icon-study"&gt;&lt;/span&gt;
+                        Estudios lumínicos
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="top-bar-right"&gt;
+                    &lt;a href="#" class="top-bar-pro"&gt;
+                        SOLICITAR ALTA PRO
+                        &lt;img src="img/X-PRO.svg" alt="X-PRO" class="btn-icon"&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- MAIN HEADER --&gt;
+    &lt;div class="header-main"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="header-container"&gt;
             &lt;a href="#" class="header-logo"&gt;
                 &lt;img src="img/logo.png" alt="FILUX" class="header-logo-img"&gt;
             &lt;/a&gt;
