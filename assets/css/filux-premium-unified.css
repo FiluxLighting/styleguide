@@ -953,7 +953,7 @@ strong, b {
 .header-search-input:focus {
   background-color: var(--color-white);
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(124, 181, 24, 0.1);
+  box-shadow: none;
 }
 
 .header-search-icon {
@@ -1891,6 +1891,17 @@ strong, b {
     max-width: 100%;
     margin-top: var(--space-2);
     flex: none;
+  }
+  
+  .header-search-input {
+    padding: 0 var(--space-3) 0 var(--space-8);
+    font-size: var(--text-xs);
+  }
+  
+  .header-search-icon {
+    left: var(--space-2);
+    width: 14px;
+    height: 14px;
   }
   
   /* Hero */
