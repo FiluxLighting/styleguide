@@ -98,6 +98,61 @@ class RecommendedProductsSlider {
 
         // Hacer el slider accesible por teclado
         this.slider.setAttribute('tabindex', '0');
+
+        // Soporte para navegación táctil (swipe) en dispositivos móviles
+        this.setupTouchNavigation();
+    }
+
+    /**
+     * Configurar navegación táctil para dispositivos móviles
+     */
+    setupTouchNavigation() {
+        let startX = 0;
+        let startY = 0;
+        let isDragging = false;
+        const minSwipeDistance = 50;
+
+        this.track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isDragging = true;
+        }, { passive: true });
+
+        this.track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            
+            // Prevenir scroll vertical si el swipe es más horizontal que vertical
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+            const diffX = Math.abs(startX - currentX);
+            const diffY = Math.abs(startY - currentY);
+            
+            if (diffX > diffY && diffX > 10) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        this.track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+            
+            // Solo procesar swipe horizontal si es más horizontal que vertical
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > minSwipeDistance) {
+                if (diffX > 0) {
+                    // Swipe left - ir al siguiente
+                    this.nextSlide();
+                } else {
+                    // Swipe right - ir al anterior
+                    this.previousSlide();
+                }
+            }
+            
+            isDragging = false;
+        }, { passive: true });
     }
 
     /**

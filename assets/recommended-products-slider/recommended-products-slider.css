@@ -176,12 +176,28 @@
     flex: 0 0 calc(100% - 20px);
   }
   
-  /* Solo en móviles ocultar las flechas */
-  .slider-nav {
-    display: none;
+  /* Mantener flechas visibles pero más compactas para móviles */
+  .recommended-products-slider {
+    padding: 0 35px; /* Reducir padding para dar espacio a flechas más pequeñas */
   }
   
-  .recommended-products-slider {
-    padding: 0;
+  .slider-nav {
+    width: 32px;
+    height: 32px;
+    border-width: 1px;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .slider-nav-prev {
+    left: 2px;
+  }
+  
+  .slider-nav-next {
+    right: 2px;
+  }
+  
+  .slider-nav svg {
+    width: 14px;
+    height: 14px;
   }
 }
