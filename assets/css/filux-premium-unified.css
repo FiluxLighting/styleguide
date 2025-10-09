@@ -2146,28 +2146,79 @@ strong, b {
   .header-container {
     gap: var(--space-2);
     padding: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header-left {
+    order: 1;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
   }
   
   .header-search {
-    margin: var(--space-2) 0 0 0;
-    width: calc(100% - 0px);
+    order: 2;
+    margin: 0;
+    width: auto;
+    min-width: 120px;
+    max-width: 160px;
+    flex: 0 1 auto;
   }
   
   .header-search-input {
-    height: 38px;
-    padding: 0 var(--space-2) 0 var(--space-6);
-    font-size: 13px;
+    height: 36px;
+    padding: 0 var(--space-2) 0 var(--space-5);
+    font-size: 12px;
     border-radius: 6px;
+    min-width: 0;
   }
   
   .header-search-icon {
-    left: var(--space-1);
+    left: 8px;
     width: 12px;
     height: 12px;
   }
   
   .header-actions {
-    gap: var(--space-2);
+    order: 3;
+    gap: var(--space-1);
+    flex: 0 0 auto;
+    margin-left: var(--space-2);
+  }
+  
+  /* Ocultar texto de botones en móviles muy pequeños */
+  .header-cart {
+    font-size: 0;
+    padding: var(--space-1);
+    min-width: 30px;
+    height: 30px;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  
+  .header-cart svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Ajustar logo para móviles pequeños */
+  .header-logo-img {
+    height: 28px;
+  }
+  
+  /* Ajustar hamburguesa para móviles pequeños */
+  .header-hamburger {
+    width: 28px;
+    height: 28px;
+    padding: var(--space-1);
+  }
+  
+  .hamburger-line {
+    height: 2px;
+    margin: 3px 0;
   }
   
   /* Categorías */
