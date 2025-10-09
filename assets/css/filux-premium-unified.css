@@ -1880,6 +1880,15 @@ strong, b {
     gap: var(--space-3);
   }
   
+  .header-left {
+    order: 1;
+  }
+  
+  .header-actions {
+    order: 2;
+    flex-shrink: 0;
+  }
+  
   .header-logo-img {
     height: 32px;
   }
