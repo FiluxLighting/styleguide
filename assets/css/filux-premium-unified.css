@@ -1810,7 +1810,8 @@ strong, b {
   }
 }
 
-@media (max-width: 1024px) {
+/* Tablets y pantallas medianas - entre 769px y 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
   /* Header - Mostrar hamburguesa y ocultar navegación */
   .header-nav {
     display: none;
@@ -1820,10 +1821,56 @@ strong, b {
     display: flex;
   }
   
+  .header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  
+  .header-left {
+    order: 1;
+    flex: 0 0 auto;
+  }
+  
+  .header-actions {
+    order: 2;
+    flex: 0 0 auto;
+    display: flex;
+    gap: var(--space-4);
+  }
+  
   .header-search {
-    min-width: 180px;
-    max-width: 240px;
-    flex: 1;
+    order: 3;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: var(--space-2) 0 0 0;
+    flex: 1 1 100%;
+  }
+  
+  .header-search-input {
+    width: 100%;
+    padding: 0 var(--space-4) 0 var(--space-10);
+    font-size: var(--text-sm);
+    box-sizing: border-box;
+  }
+  
+  .header-search-icon {
+    left: var(--space-3);
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Header - Mostrar hamburguesa y ocultar navegación */
+  .header-nav {
+    display: none;
+  }
+  
+  .header-hamburger {
+    display: flex;
   }
   
   /* Hero */
